@@ -14,6 +14,7 @@ h2{
 font-size: 26px;
 margin-bottom: 17px;
 color: #333333;
+padding-left: 19px;
 }
 
 h3{
@@ -30,18 +31,16 @@ left:0;
 display:flex;
 flex-direction: column;
 justify-content: center;
-padding: 0 15px;
+padding: 0 21px;
 color: white;
 background: #CF2B2B;
 }
 
 .conteudo{
-padding-left: 19px;
 margin-top: 123px;
 }
 
 .prato-bebida-sobremesa{
-margin-bottom: 27px;
 overflow: hidden;
 }
 
@@ -51,6 +50,7 @@ margin-bottom:108px;
 
 .opcoes{
 display: flex;
+padding: 0 19px 27px 19px;
 }
 
 .opcao{
@@ -63,6 +63,7 @@ margin-right: 16px;
 padding: 18px 14px;
 border-radius: 9px;
 background: white;
+box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
 }
 
 .opcao img{
@@ -88,7 +89,7 @@ justify-content: center;
 align-items: center;
 background: #CBCBCB;
 border-radius: 50px;
-padding: 0 80px;
+padding: 0 20%;
 }
 
 .nomePrato{
