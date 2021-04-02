@@ -1,18 +1,18 @@
 function removeBorda(idPai){
     let id= `${idPai}`
-    const opcoesBordadas = document.querySelectorAll(`#${id} .borda`);
-    if (opcoesBordadas.length > 0) {
-    opcoesBordadas[0].classList.remove("borda");
-    opcoesBordadas[0].querySelector("ion-icon").style.display = "none";
+    const opcoesBordadas = document.querySelector(`#${id} .borda`);
+    if (opcoesBordadas !== null) {
+    opcoesBordadas.classList.remove("borda");
+    opcoesBordadas.querySelector("ion-icon").style.display = "none";
 }
 }
 
 function fechou(){
     const opcaoSelecionada = document.querySelectorAll(".borda");
     if (opcaoSelecionada.length > 2){
-        document.querySelector(".selecionarFechar").classList.remove("disable");
-        document.querySelector(".selecionarFechar").style.background  = "#32B72F";
-        document.querySelector(".textoFechamento").innerHTML = "Fechar pedido";
+        document.querySelector(".selecionar-fechar").classList.remove("disable");
+        document.querySelector(".selecionar-fechar").style.background  = "#32B72F";
+        document.querySelector(".texto-fechamento").innerHTML = "Fechar pedido";
     }
 }
 
@@ -27,34 +27,34 @@ total();
 }
 
 function avancarConfirmacao(){
-    document.querySelector(".telaConfirmarPedido").classList.remove("hide");
-    document.querySelector(".antesdeConfirmar").classList.add("opacidade");
+    document.querySelector(".tela-confirmar-pedido").classList.remove("escondido");
+    document.querySelector(".antes-confirmar").classList.add("opacidade");
 }
 
 function cancelar(){
-    document.querySelector(".telaConfirmarPedido").classList.add("hide");
-    document.querySelector(".antesdeConfirmar").classList.remove("opacidade");
+    document.querySelector(".tela-confirmar-pedido").classList.add("escondido");
+    document.querySelector(".antes-confirmar").classList.remove("opacidade");
 
 }
 
 function computaPedido(el,idPai){
     if (idPai === "opcoes1"){
-        document.querySelector(".prato1").innerHTML = el.querySelector(".nomePrato").innerHTML;
+        document.querySelector(".item1").innerHTML = el.querySelector(".nome-item").innerHTML;
         document.querySelector(".preco1").innerHTML = el.querySelector(".preco").innerHTML;
     }
     else if (idPai === "opcoes2"){
-        document.querySelector(".prato2").innerHTML = el.querySelector(".nomePrato").innerHTML;
+        document.querySelector(".item2").innerHTML = el.querySelector(".nome-item").innerHTML;
         document.querySelector(".preco2").innerHTML = el.querySelector(".preco").innerHTML;
     }
     else {
-        document.querySelector(".prato3").innerHTML = el.querySelector(".nomePrato").innerHTML;
+        document.querySelector(".item3").innerHTML = el.querySelector(".nome-item").innerHTML;
         document.querySelector(".preco3").innerHTML = el.querySelector(".preco").innerHTML;
     }
 }
 
 function total(){
     const total = (Number(document.querySelector(".preco1").innerHTML.replace(",","."))
-    + Number(document.querySelector(".preco").innerHTML.replace(",","."))
+    + Number(document.querySelector(".preco2").innerHTML.replace(",","."))
     + Number(document.querySelector(".preco3").innerHTML.replace(",",".")))
 
     document.querySelector(".precoTotal").innerHTML = total.toFixed(2).replace(".",",")
@@ -65,9 +65,9 @@ function nomeEnderecoPedir(){
     const endereco = prompt("Qual o endereço de entrega ?")
 
     const url = encodeURIComponent(`Olá, gostaria de fazer o pedido:
-    - Prato: ${document.querySelector(".prato1").innerHTML}
-    - Bebida: ${document.querySelector(".prato2").innerHTML}
-    - Sobremesa: ${document.querySelector(".prato3").innerHTML}
+    - Prato: ${document.querySelector(".item1").innerHTML}
+    - Bebida: ${document.querySelector(".item2").innerHTML}
+    - Sobremesa: ${document.querySelector(".item3").innerHTML}
     Total: R$ ${document.querySelector(".precoTotal").innerHTML}
 
     Nome: ${nome}
