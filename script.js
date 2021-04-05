@@ -57,7 +57,7 @@ function total(){
     + Number(document.querySelector(".preco2").innerHTML.replace(",","."))
     + Number(document.querySelector(".preco3").innerHTML.replace(",",".")))
 
-    document.querySelector(".precoTotal").innerHTML = total.toFixed(2).replace(".",",")
+    document.querySelector(".precoTotal").innerHTML = "R$ " + total.toFixed(2).replace(".",",")
 }
 
 function nomeEnderecoPedir(){
